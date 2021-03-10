@@ -9,9 +9,10 @@ let calculateMonthlyPayment = function(principal, years, rate) {
 };
 
 document.getElementById('calcBtn').addEventListener('click', function () {
-    var principal = document.getElementById("principal").value;
-    var years = document.getElementById("years").value;
-    var rate = document.getElementById("rate").value;
-    var monthlyPayment = calculateMonthlyPayment(principal, years, rate);
+    let principal = document.getElementById("principal").value;
+    let years = document.getElementById("years").value;
+    let rate = document.getElementById("rate").value;
+    let {monthlyPayment, monthlyRate} = calculateMonthlyPayment(principal, years, rate);
     document.getElementById("monthlyPayment").innerHTML = monthlyPayment.toFixed(2);
+    document.getElementById("monthlyRate").innerHTML = (monthlyRate * 100).toFixed(2);
 });

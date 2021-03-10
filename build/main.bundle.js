@@ -13,6 +13,11 @@ document.getElementById('calcBtn').addEventListener('click', function () {
     var principal = document.getElementById("principal").value;
     var years = document.getElementById("years").value;
     var rate = document.getElementById("rate").value;
-    var monthlyPayment = calculateMonthlyPayment(principal, years, rate);
+
+    var _calculateMonthlyPaym = calculateMonthlyPayment(principal, years, rate),
+        monthlyPayment = _calculateMonthlyPaym.monthlyPayment,
+        monthlyRate = _calculateMonthlyPaym.monthlyRate;
+
     document.getElementById("monthlyPayment").innerHTML = monthlyPayment.toFixed(2);
+    document.getElementById("monthlyRate").innerHTML = (monthlyRate * 100).toFixed(2);
 });
